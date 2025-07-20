@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stark Tech Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="website icon" href="/assets/logo/icon.png">
+    <link rel="icon" href="https://images.wallpapersden.com/image/download/marvel-iron-man-art_68122_2160x3840.jpg" type="image/png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="subscribe.css">
+
+    <style>
+        /* Circle styles */
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 24px;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            /* Stays on top of all elements */
+        }
+        .bttn-four4{
+            width: 100px;
+            height: 50px;
+            background-color: black;
+            border-radius: 15px;
+            font-weight: bold;
+            box-shadow: 0 0 4px red, 0 0 8px red, 0 0 12px red, 0 0 16px red;
+            transition: 0.5s;
+        }
+        .bttn-four4:hover{
+            background-color: white;
+            height: 55px;
+            width: 105px;
+            box-shadow: 0 0 5px black, 0 0 9px black, 0 0 13px black, 0 0 17px black;
+            border: white;
+        }
+    </style>
+</head>
+<body>
+
+
+        <!-- Preloader Section -->
+<div id="preloader">
+    <img src="arc-reactor.gif" alt="Loading...">
+</div>
+<style>
+/* Fullscreen Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    z-index: 999999999999;
+    opacity: 1;
+    transition: opacity 3s ease, visibility 3s ease;
+    visibility: visible;
+}
+    
+#preloader img {
+    width: 300px; /* Adjust width as desired */
+    height: 300px; /* Adjust height as desired */
+}
+/* Hide Content until Loaded */
+#content {
+    display: none;
+}
+
+</style>
+<script>
+// Hide preloader and show content after page loads
+window.addEventListener("load", function() {
+    const preloader = document.getElementById("preloader");
+    const content = document.getElementById("content");
+
+    // Apply fade-out effect
+    preloader.style.opacity = "0";
+    preloader.style.visibility = "hidden";
+
+    // Show content after the fade-out effect
+    setTimeout(() => {
+        content.style.display = "block";
+    }, 6000); // Match this delay to the CSS transition duration
+});
+
+function updateActiveLink() {
+    const sections = document.querySelectorAll('section'); // All your sections
+    const navLinks = document.querySelectorAll('.nav-list li a'); // All navigation links
+
+    let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (scrollPosition >= sectionTop - 85 && scrollPosition < sectionTop + sectionHeight - 85) { //85 is header space
+            const activeLinkId = section.id; // Get the current section id
+            navLinks.forEach((link) => {
+                link.classList.remove('active-header'); // Remove active class from all links
+            });
+            // Add active class to the corresponding <a> tag
+            document.querySelector(`a[href="#${activeLinkId}"]`).classList.add('active-header');
+        }
+    });
+}
+
+window.addEventListener('scroll', updateActiveLink);
+</script>    
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+  </div>
+
+    <nav class="navbar h-nav background">
+        <ul class="nav-list visibility">
+            <div onclick="handleLink()" class="logo" id="ironmask" ><a href="./index.html"><img src="assets\logo\icon.png"   alt="logo" srcset=""></a></div>
+            <li onclick="handleLink()"> <a href="#home" class="active-header">Home</a></li>
+            <li onclick="handleLink()"> <a href="#about">About</a></li>
+            <li onclick="handleLink()"> <a href="Appearances.html">Appearances</a></li>
+            <li onclick="handleLink()"> <a href="Comics.html">Comics</a></li>
+            <li onclick="handleLink()"> <a href="#contact">Contact</a></li> 
+            <li onclick="handleLink()"> <a href="blog.html">Blogs</a></li>
+        </ul>
+
+        <div class="rightNav visibility">
+            <form class="search-bar">
+            <input type="text" id="search-bar" name="search"  placeholder="Search the website">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    <section class="background1 firstSection" id="home">
+        <div class="box-main">
+            <div class="firstHalf DoAnimation">
+                <img id="img" class="ironman-illustration" src="assets/ironman_illustration.png" alt="Ironman Illustration">
+            </div>
+            <div class="secondHalf">
+                <h1 class="txt-big">Who is Ironman?</h1>
+                <p class="txt-small">
+                Iron Man is a legendary superhero from Marvel Comics, co-created by writer and editor Stan Lee, with scripter Larry Lieber and artists Don Heck and Jack Kirby contributing to his development and design. First appearing in Tales of Suspense, Iron Man later starred in his own comic series. In 1963, Tony Stark's Iron Man joined forces with Thor, Ant-Man, Wasp, and the Hulk to become a founding member of the iconic Avengers team.
+                </p>
+                <div class="buttons">
+                    <button class="btn btn-invert" onclick="window.location.href='movies.html'">Movies</button>
+                    <button class="btn btn-invert " onclick="window.location.href='videos.html'" target="_blank">Watch Video</button>
+                    <button class="btn btn-invert " onclick="window.location.href='sticker.html'" target="_blank">Stickers</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section  class="sec">
+    <section class="section" id="about">
+        <div class="paras"  data-aos="fade-up-right">
+       <p class="sectionTag text-big" >Which Cinematic Universe Does He Belong?</p>
+       <p class="sectionSubTag text-small"><strong>Iron Man (real name Anthony Edward "Tony" Stark) is a superhero from Marvel Comics and the Marvel Cinematic Universe, first appearing in the 2008 film Iron Man. He is also one of the protagonists of the TV series The Avengers: Earth's Mightiest Heroes and Avengers Assemble.</strong>
+        <br>The Marvel Cinematic Universe (MCU) is a groundbreaking American media franchise and shared universe focused on superhero films produced by Marvel Studios. These films feature characters from Marvel Comics, creating an interconnected world. Marvel Studios organizes its releases into "Phases," with the first three phases known as The Infinity Saga and the next three phases as The Multiverse Saga. This approach has made the MCU a global entertainment powerhouse.</p>
+        <br>
+        <button class="bttn-four4"><a href="quiz.html" target="_blank" style="text-decoration: none;">PLAY A QUIZ!</a></button>
+    </div>
+
+       <div class="thumbnail">
+        <img data-aos="fade-up-left" src="assets/marvel.jpg" alt="Tony" class="imgFluid">
+       </div>
+    </section>
+
+    
+    <section class="section left" id="services">
+        <div class="paras paraRight" data-aos="fade-up-left">
+       <p class="sectionTag text-big">Tony Stark</p>
+       <p class="sectionSubTag text-small">Tony Stark, the genius billionaire and philanthropist, revolutionized heroism by creating and wearing the iconic Iron Man suit. As CEO of Stark Industries and a founding Avenger, he once powered global defense, even working with S.H.I.E.L.D., until he saw the damage his tech could cause. That revelation sparked a change. Teaming up with Yinsen, Tony built his first Iron Man suit, marking the moment he shifted from arms dealer to a hero fighting for peace and justice. Iron Man was born—a symbol of redemption, innovation, and unyielding courage. <br></alone> <strong>"My armor, it was never a distraction or a hobby, it was a cocoon. And now, I'm a changed man. You can take away my house, all my tricks and toys. But one thing you can't take away... I am Iron Man."
+        ―Tony Stark</strong></p>
+        <br>
+        <button class="bttn-four4"><a href="variants.html" target="_blank">VARIANTS</a></button>
+        </div>
+        
+       <div class="thumbnail">
+        <img data-aos="fade-up-right" src="assets/tony2.jpg" alt="Tony" class="imgFluid">
+       </div>
+    </section>
+    <section class="section" id="services">
+        <div class="paras" data-aos="fade-up-right">
+       <p class="sectionTag text-big">Robert Downey Jr</p>
+       <p class="sectionSubTag text-small">Robert John Downey Jr. (born April 4, 1965) is an American actor and producer known for his remarkable career that has seen both critical acclaim and personal challenges. After a period of substance abuse and legal issues, he made a major comeback to become one of Hollywood’s most respected stars. <br> RDJ gained worldwide fame for his portrayal of Tony Stark/Iron Man in the Marvel Cinematic Universe, beginning with Iron Man (2008) and culminating in Avengers: Endgame (2019). He also starred as Sherlock Holmes in Guy Ritchie's films, earning a Golden Globe for his performance. <br> <strong>With a career spanning over four decades, Robert Downey Jr. remains an enduring and innovative figure in the entertainment industry.</strong>
+    </p>
+        </div>
+       <div class="thumbnail">
+        <img src="assets/robert.jpg" data-aos="fade-up-left" alt="Tony" class="imgFluid">
+       </div>
+    </section>
+        <section class="contact" id="contact">
+        <h2 class="text-center ironman-title">Contact Us</h2>
+         <p class="ironman-subtext">Want to get in touch? We'd love to hear from you. Here's how you can reach us.</p>
+
+    
+        <div class="form ironman-form">
+            <input type="text" name="name" id="name" placeholder="Enter Your Name" class="ironman-input" required>
+            
+            <!-- Drop down menu with countries/flags -->
+            <div class="country-input-group">
+                <select id="country-code" class="country-select">
+                    <option value="" disabled selected>Select your country</option>
+                    <option value="af" data-flag="🇦🇫" data-code="+93">+93 Afghanistan</option>
+                    <option value="al" data-flag="🇦🇱" data-code="+355">+355 Albania</option>
+                    <option value="dz" data-flag="🇩🇿" data-code="+213">+213 Algeria</option>
+                    <option value="ad" data-flag="🇦🇩" data-code="+376">+376 Andorra</option>
+                    <option value="ao" data-flag="🇦🇴" data-code="+244">+244 Angola</option>
+                    <option value="ag" data-flag="🇦🇬" data-code="+1-268">+1-268 Antigua and Barbuda</option>
+                    <option value="ar" data-flag="🇦🇷" data-code="+54">+54 Argentina</option>
+                    <option value="am" data-flag="🇦🇲" data-code="+374">+374 Armenia</option>
+                    <option value="aw" data-flag="🇦🇼" data-code="+297">+297 Aruba</option>
+                    <option value="au" data-flag="🇦🇺" data-code="+61">+61 Australia</option>
+                    <option value="at" data-flag="🇦🇹" data-code="+43">+43 Austria</option>
+                    <option value="az" data-flag="🇦🇿" data-code="+994">+994 Azerbaijan</option>
+                    <option value="bs" data-flag="🇧🇸" data-code="+1-242">+1-242 Bahamas</option>
+                    <option value="bh" data-flag="🇧🇭" data-code="+973">+973 Bahrain</option>
+                    <option value="bd" data-flag="🇧🇩" data-code="+880">+880 Bangladesh</option>
+                    <option value="bb" data-flag="🇧🇧" data-code="+1-246">+1-246 Barbados</option>
+                    <option value="by" data-flag="🇧🇾" data-code="+375">+375 Belarus</option>
+                    <option value="be" data-flag="🇧🇪" data-code="+32">+32 Belgium</option>
+                    <option value="bz" data-flag="🇧🇿" data-code="+501">+501 Belize</option>
+                    <option value="bj" data-flag="🇧🇯" data-code="+229">+229 Benin</option>
+                    <option value="bt" data-flag="🇧🇹" data-code="+975">+975 Bhutan</option>
+                    <option value="bo" data-flag="🇧🇴" data-code="+591">+591 Bolivia</option>
+                    <option value="ba" data-flag="🇧🇦" data-code="+387">+387 Bosnia and Herzegovina</option>
+                    <option value="bw" data-flag="🇧🇼" data-code="+267">+267 Botswana</option>
+                    <option value="br" data-flag="🇧🇷" data-code="+55">+55 Brazil</option>
+                    <option value="bn" data-flag="🇧🇳" data-code="+673">+673 Brunei</option>
+                    <option value="bg" data-flag="🇧🇬" data-code="+359">+359 Bulgaria</option>
+                    <option value="bf" data-flag="🇧🇫" data-code="+226">+226 Burkina Faso</option>
+                    <option value="bi" data-flag="🇧🇮" data-code="+257">+257 Burundi</option>
+                    <option value="cv" data-flag="🇨🇻" data-code="+238">+238 Cape Verde</option>
+                    <option value="kh" data-flag="🇰🇭" data-code="+855">+855 Cambodia</option>
+                    <option value="cm" data-flag="🇨🇲" data-code="+237">+237 Cameroon</option>
+                    <option value="ca" data-flag="🇨🇦" data-code="+1">+1 Canada</option>
+                    <option value="cg" data-flag="🇨🇬" data-code="+242">+242 Central African Republic</option>
+                    <option value="cd" data-flag="🇨🇩" data-code="+243">+243 Democratic Republic of the Congo</option>
+                    <option value="cz" data-flag="🇨🇿" data-code="+420">+420 Czech Republic</option>
+                    <option value="dk" data-flag="🇩🇰" data-code="+45">+45 Denmark</option>
+                    <option value="dj" data-flag="🇩🇯" data-code="+253">+253 Djibouti</option>
+                    <option value="dm" data-flag="🇩🇲" data-code="+1-767">+1-767 Dominica</option>
+                    <option value="do" data-flag="🇩🇴" data-code="+1-809">+1-809 Dominican Republic</option>
+                    <option value="ec" data-flag="🇪🇨" data-code="+593">+593 Ecuador</option>
+                    <option value="eg" data-flag="🇪🇬" data-code="+20">+20 Egypt</option>
+                    <option value="sv" data-flag="🇸🇻" data-code="+503">+503 El Salvador</option>
+                    <option value="gq" data-flag="🇬🇶" data-code="+240">+240 Equatorial Guinea</option>
+                    <option value="er" data-flag="🇪🇷" data-code="+291">+291 Eritrea</option>
+                    <option value="ee" data-flag="🇪🇪" data-code="+372">+372 Estonia</option>
+                    <option value="sz" data-flag="🇸🇿" data-code="+268">+268 Eswatini</option>
+                    <option value="et" data-flag="🇪🇹" data-code="+251">+251 Ethiopia</option>
+                    <option value="fj" data-flag="🇫🇯" data-code="+679">+679 Fiji</option>
+                    <option value="fi" data-flag="🇫🇮" data-code="+358">+358 Finland</option>
+                    <option value="fr" data-flag="🇫🇷" data-code="+33">+33 France</option>
+                    <option value="ga" data-flag="🇬🇦" data-code="+241">+241 Gabon</option>
+                    <option value="gm" data-flag="🇬🇲" data-code="+220">+220 Gambia</option>
+                    <option value="ge" data-flag="🇬🇪" data-code="+995">+995 Georgia</option>
+                    <option value="de" data-flag="🇩🇪" data-code="+49">+49 Germany</option>
+                    <option value="gh" data-flag="🇬🇭" data-code="+233">+233 Ghana</option>
+                    <option value="gr" data-flag="🇬🇷" data-code="+30">+30 Greece</option>
+                    <option value="gt" data-flag="🇬🇹" data-code="+502">+502 Guatemala</option>
+                    <option value="gn" data-flag="🇬🇳" data-code="+224">+224 Guinea</option>
+                    <option value="gw" data-flag="🇬🇼" data-code="+245">+245 Guinea-Bissau</option>
+                    <option value="gy" data-flag="🇬🇾" data-code="+595">+595 Guyana</option>
+                    <option value="ht" data-flag="🇭🇹" data-code="+509">+509 Haiti</option>
+                    <option value="hn" data-flag="🇭🇳" data-code="+504">+504 Honduras</option>
+                    <option value="hk" data-flag="🇭🇰" data-code="+852">+852 Hong Kong</option>
+                    <option value="hu" data-flag="🇭🇺" data-code="+36">+36 Hungary</option>
+                    <option value="is" data-flag="🇮🇸" data-code="+354">+354 Iceland</option>
+                    <option value="in" data-flag="🇮🇳" data-code="+91">+91 India</option>
+                    <option value="id" data-flag="🇮🇩" data-code="+62">+62 Indonesia</option>
+                    <option value="ir" data-flag="🇮🇷" data-code="+98">+98 Iran</option>
+                    <option value="iq" data-flag="🇮🇶" data-code="+964">+964 Iraq</option>
+                    <option value="ie" data-flag="🇮🇪" data-code="+353">+353 Ireland</option>
+                    <option value="il" data-flag="🇮🇱" data-code="+972">+972 Israel</option>
+                    <option value="it" data-flag="🇮🇹" data-code="+39">+39 Italy</option>
+                    <option value="jm" data-flag="🇯🇲" data-code="+1-876">+1-876 Jamaica</option>
+                    <option value="jp" data-flag="🇯🇵" data-code="+81">+81 Japan</option>
+                    <option value="jo" data-flag="🇯🇴" data-code="+962">+962 Jordan</option>
+                    <option value="kz" data-flag="🇰🇿" data-code="+7">+7 Kazakhstan</option>
+                    <option value="ke" data-flag="🇰🇪" data-code="+254">+254 Kenya</option>
+                    <option value="ki" data-flag="🇰🇮" data-code="+686">+686 Kiribati</option>
+                    <option value="kp" data-flag="🇰🇵" data-code="+850">+850 North Korea</option>
+                    <option value="kr" data-flag="🇰🇷" data-code="+82">+82 South Korea</option>
+                    <option value="kw" data-flag="🇰🇼" data-code="+965">+965 Kuwait</option>
+                    <option value="kg" data-flag="🇰🇬" data-code="+996">+996 Kyrgyzstan</option>
+                    <option value="la" data-flag="🇱🇦" data-code="+856">+856 Laos</option>
+                    <option value="lv" data-flag="🇱🇻" data-code="+371">+371 Latvia</option>
+                    <option value="lb" data-flag="🇱🇧" data-code="+961">+961 Lebanon</option>
+                    <option value="ls" data-flag="🇱🇸" data-code="+266">+266 Lesotho</option>
+                    <option value="lr" data-flag="🇱🇷" data-code="+231">+231 Liberia</option>
+                    <option value="ly" data-flag="🇱🇾" data-code="+218">+218 Libya</option>
+                    <option value="li" data-flag="🇱🇮" data-code="+423">+423 Liechtenstein</option>
+                    <option value="lt" data-flag="🇱🇹" data-code="+370">+370 Lithuania</option>
+                    <option value="lu" data-flag="🇱🇺" data-code="+352">+352 Luxembourg</option>
+                    <option value="mg" data-flag="🇲🇬" data-code="+261">+261 Madagascar</option>
+                    <option value="mw" data-flag="🇲🇼" data-code="+265">+265 Malawi</option>
+                    <option value="my" data-flag="🇲🇾" data-code="+60">+60 Malaysia</option>
+                    <option value="mv" data-flag="🇲🇻" data-code="+960">+960 Maldives</option>
+                    <option value="ml" data-flag="🇲🇱" data-code="+223">+223 Mali</option>
+                    <option value="mt" data-flag="🇲🇹" data-code="+356">+356 Malta</option>
+                    <option value="mh" data-flag="🇲🇭" data-code="+692">+692 Marshall Islands</option>
+                    <option value="mq" data-flag="🇲🇶" data-code="+596">+596 Martinique</option>
+                    <option value="mr" data-flag="🇲🇦" data-code="+222">+222 Mauritania</option>
+                    <option value="mu" data-flag="🇲🇺" data-code="+230">+230 Mauritius</option>
+                    <option value="yt" data-flag="🇾🇹" data-code="+262">+262 Mayotte</option>
+                    <option value="mx" data-flag="🇲🇽" data-code="+52">+52 Mexico</option>
+                    <option value="fm" data-flag="🇫🇲" data-code="+691">+691 Micronesia</option>
+                    <option value="md" data-flag="🇲🇩" data-code="+373">+373 Moldova</option>
+                    <option value="mc" data-flag="🇲🇨" data-code="+377">+377 Monaco</option>
+                    <option value="mn" data-flag="🇲🇳" data-code="+976">+976 Mongolia</option>
+                    <option value="me" data-flag="🇲🇪" data-code="+382">+382 Montenegro</option>
+                    <option value="ma" data-flag="🇲🇦" data-code="+212">+212 Morocco</option>
+                    <option value="mz" data-flag="🇲🇿" data-code="+258">+258 Mozambique</option>
+                    <option value="mm" data-flag="🇲🇲" data-code="+95">+95 Myanmar</option>
+                    <option value="na" data-flag="🇳🇦" data-code="+264">+264 Namibia</option>
+                    <option value="nr" data-flag="🇳🇷" data-code="+674">+674 Nauru</option>
+                    <option value="np" data-flag="🇳🇵" data-code="+977">+977 Nepal</option>
+                    <option value="nl" data-flag="🇳🇱" data-code="+31">+31 Netherlands</option>
+                    <option value="nc" data-flag="🇳🇨" data-code="+687">+687 New Caledonia</option>
+                    <option value="nz" data-flag="🇳🇿" data-code="+64">+64 New Zealand</option>
+                    <option value="ni" data-flag="🇳🇮" data-code="+505">+505 Nicaragua</option>
+                    <option value="ne" data-flag="🇳🇪" data-code="+227">+227 Niger</option>
+                    <option value="ng" data-flag="🇳🇬" data-code="+234">+234 Nigeria</option>
+                    <option value="nu" data-flag="🇳🇺" data-code="+683">+683 Niue</option>
+                    <option value="nf" data-flag="🇳🇫" data-code="+672">+672 Norfolk Island</option>
+                    <option value="mp" data-flag="🇲🇵" data-code="+1-670">+1-670 Northern Mariana Islands</option>
+                    <option value="no" data-flag="🇳🇴" data-code="+47">+47 Norway</option>
+                    <option value="om" data-flag="🇴🇲" data-code="+968">+968 Oman</option>
+                    <option value="pk" data-flag="🇵🇰" data-code="+92">+92 Pakistan</option>
+                    <option value="pw" data-flag="🇵🇼" data-code="+680">+680 Palau</option>
+                    <option value="ps" data-flag="🇵🇸" data-code="+970">+970 Palestine</option>
+                    <option value="pa" data-flag="🇵🇦" data-code="+507">+507 Panama</option>
+                    <option value="pg" data-flag="🇵🇬" data-code="+675">+675 Papua New Guinea</option>
+                    <option value="py" data-flag="🇵🇾" data-code="+595">+595 Paraguay</option>
+                    <option value="pe" data-flag="🇵🇪" data-code="+51">+51 Peru</option>
+                    <option value="ph" data-flag="🇵🇭" data-code="+63">+63 Philippines</option>
+                    <option value="pl" data-flag="🇵🇱" data-code="+48">+48 Poland</option>
+                    <option value="pt" data-flag="🇵🇹" data-code="+351">+351 Portugal</option>
+                    <option value="pr" data-flag="🇵🇷" data-code="+1-787">+1-787 Puerto Rico</option>
+                    <option value="qa" data-flag="🇶🇦" data-code="+974">+974 Qatar</option>
+                    <option value="re" data-flag="🇷🇪" data-code="+262">+262 Réunion</option>
+                    <option value="ro" data-flag="🇷🇴" data-code="+40">+40 Romania</option>
+                    <option value="ru" data-flag="🇷🇺" data-code="+7">+7 Russia</option>
+                    <option value="rw" data-flag="🇷🇼" data-code="+250">+250 Rwanda</option>
+                    <option value="bl" data-flag="🇧🇱" data-code="+590">+590 Saint Barthélemy</option>
+                    <option value="kn" data-flag="🇰🇳" data-code="+1-869">+1-869 Saint Kitts and Nevis</option>
+                    <option value="lc" data-flag="🇱🇨" data-code="+1-758">+1-758 Saint Lucia</option>
+                    <option value="mf" data-flag="🇲🇫" data-code="+590">+590 Saint Martin</option>
+                    <option value="sx" data-flag="🇸🇽" data-code="+1-721">+1-721 Sint Maarten</option>
+                    <option value="sc" data-flag="🇸🇨" data-code="+248">+248 Seychelles</option>
+                    <option value="sd" data-flag="🇸🇩" data-code="+249">+249 Sudan</option>
+                    <option value="sr" data-flag="🇸🇷" data-code="+597">+597 Suriname</option>
+                    <option value="sz" data-flag="🇸🇿" data-code="+268">+268 Eswatini</option>
+                    <option value="se" data-flag="🇸🇪" data-code="+46">+46 Sweden</option>
+                    <option value="ch" data-flag="🇨🇭" data-code="+41">+41 Switzerland</option>
+                    <option value="sy" data-flag="🇸🇾" data-code="+963">+963 Syria</option>
+                    <option value="tw" data-flag="🇹🇼" data-code="+886">+886 Taiwan</option>
+                    <option value="tj" data-flag="🇹🇯" data-code="+992">+992 Tajikistan</option>
+                    <option value="tz" data-flag="🇹🇿" data-code="+255">+255 Tanzania</option>
+                    <option value="th" data-flag="🇹🇭" data-code="+66">+66 Thailand</option>
+                    <option value="tl" data-flag="🇹🇱" data-code="+670">+670 Timor-Leste</option>
+                    <option value="tg" data-flag="🇹🇬" data-code="+228">+228 Togo</option>
+                    <option value="tk" data-flag="🇹🇰" data-code="+690">+690 Tokelau</option>
+                    <option value="to" data-flag="🇹🇴" data-code="+676">+676 Tonga</option>
+                    <option value="tt" data-flag="🇹🇹" data-code="+1-868">+1-868 Trinidad and Tobago</option>
+                    <option value="tn" data-flag="🇹🇳" data-code="+216">+216 Tunisia</option>
+                    <option value="tr" data-flag="🇹🇷" data-code="+90">+90 Turkey</option>
+                    <option value="tm" data-flag="🇹🇲" data-code="+993">+993 Turkmenistan</option>
+                    <option value="tc" data-flag="🇹🇨" data-code="+1-649">+1-649 Turks and Caicos Islands</option>
+                    <option value="tv" data-flag="🇹🇻" data-code="+688">+688 Tuvalu</option>
+                    <option value="ug" data-flag="🇺🇬" data-code="+256">+256 Uganda</option>
+                    <option value="ua" data-flag="🇺🇦" data-code="+380">+380 Ukraine</option>
+                    <option value="ae" data-flag="🇦🇪" data-code="+971">+971 United Arab Emirates</option>
+                    <option value="gb" data-flag="🇬🇧" data-code="+44">+44 United Kingdom</option>
+                    <option value="us" data-flag="🇺🇸" data-code="+1">+1 United States</option>
+                    <option value="uy" data-flag="🇺🇾" data-code="+598">+598 Uruguay</option>
+                    <option value="uz" data-flag="🇺🇿" data-code="+998">+998 Uzbekistan</option>
+                    <option value="vu" data-flag="🇻🇺" data-code="+678">+678 Vanuatu</option>
+                    <option value="va" data-flag="🇻🇦" data-code="+39">+39 Vatican City</option>
+                    <option value="ve" data-flag="🇻🇪" data-code="+58">+58 Venezuela</option>
+                    <option value="vn" data-flag="🇻🇳" data-code="+84">+84 Vietnam</option>
+                    <option value="wf" data-flag="🇼🇫" data-code="+681">+681 Wallis and Futuna</option>
+                    <option value="eh" data-flag="🇪🇭" data-code="+212">+212 Western Sahara</option>
+                    <option value="ye" data-flag="🇾🇪" data-code="+967">+967 Yemen</option>
+                    <option value="zm" data-flag="🇿🇲" data-code="+260">+260 Zambia</option>
+                    <option value="zw" data-flag="🇿🇼" data-code="+263">+263 Zimbabwe</option>                  
+                </select>
+            
+
+            <input type="tel" name="phone" id="phone" placeholder="Your Contact Number" class="ironman-input" required>
+        </div>
+           
+            <input type="email" name="email" id="email" placeholder="Your Email Address" class="ironman-input" required>
+            
+            <textarea name="message" id="message" rows="4" placeholder="Share Your Message" class="ironman-input"></textarea>
+            
+<button type="button" class="btn submit-btn" onclick="validateForm()">Submit</button>
+        </div>
+    </section>
+    
+    <script>
+    function validateForm() {
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email regex
+        const phonePattern = /^\d{10}$/; // Example for 10-digit phone numbers
+
+        if (!emailPattern.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        if (!phonePattern.test(phone)) {
+            alert('Please enter a valid phone number (10 digits).');
+            return;
+        }
+
+        // If validation passes, you can submit the form or perform another action
+        alert('Form submitted successfully!');
+        // Here you could submit the form via AJAX or similar
+    }
+
+    function restrictInputToNumbers(event) {
+        const key = event.key;
+        if (!/^\d$/.test(key) && key !== "Backspace" && key !== "Delete") {
+            event.preventDefault(); // Prevent input if it's not a digit
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const phoneInput = document.getElementById('phone');
+        phoneInput.addEventListener('keydown', restrictInputToNumbers);
+    });
+    </script>
+
+
+<!-- Newsletter Section -->
+    <div class="news-main" id="subscribe">
+        
+        <div class="container">
+             <h2 class="text-center ironman-title">Subscribe Us</h2>
+            <div class="newsletter-wrapper">
+                
+                <section class="newsletter-section">
+                    <div class="newsletter-content">
+                        <h2>Stay Updated with Our Latest News</h2>
+                        <p>Subscribe to our newsletter to receive exclusive updates, promotions, and tips.</p>
+                        <form id="newsletterForm">
+                            <label for="email"></label>
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email address"
+                                class="email-input"
+                                required
+                            />
+                            <button type="submit" class="btn subscribe-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    </section>
+   <footer>
+    <div class="footer background">
+        
+        <div class="footer-col">
+            <div class="footer-img">
+                 <img src="/assets/logo/icon.png" id="ironlogo"    alt="">
+            </div>
+            <div class="visitor-counter">
+                <span class="icon">👁️</span> <!-- You can replace this with an eye icon image if you prefer -->
+                <span id="visitorCount">Visitors Count:</span>
+                <span class="website-counter">0</span>
+            </div>
+        <script>
+              // Function to get the count from localStorage or initialize it
+        function getVisitorCount() {
+        return localStorage.getItem('visitorCount') || 0;
+        }
+        
+        // Function to increment and save the count
+        function incrementVisitorCount() {
+        let count = parseInt(getVisitorCount()) + 1;
+        localStorage.setItem('visitorCount', count);
+        return count;
+        }
+        
+        // Function to display the count
+        function displayVisitorCount() {
+        const counterElement = document.querySelector('.website-counter');
+        const count = incrementVisitorCount();
+        counterElement.textContent = count;
+        }
+        
+        // Call the display function when the page loads
+        document.addEventListener('DOMContentLoaded', displayVisitorCount);
+        </script>
+      
+            
+            <p class="footer-p">
+
+                <!-- Iron Man is a fictional superhero in the Marvel Comics universe, created by writer Stan Lee. His real name is Tony Stark, a billionaire industrialist and genius inventor who builds a high-tech suit of powered armor to fight crime after a life-threatening injury. -->
+                <!-- Iron Man, or Tony Stark, is a billionaire genius who becomes a superhero with his advanced armored suit. -->
+                <!-- Iron Man, Tony Stark, is a tech genius who fights for justice in a powerful, high-tech suit of armor he created. -->
+                Iron Man, aka Tony Stark, is a tech genius and billionaire who uses his advanced armored suit to fight for justice.
+
+            </p>
+            
+            <div class="footer-social">
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div> 
+        </div>
+  
+        <div class="footer-col-main">
+            <h4 class="h46">Overview</h4>
+            <a href="#">Who is Iron Man?</a>
+            <a href="/merchandise.html">Buy Merchandise</a>
+            <a href="#">Community</a>
+
+            <a href="#">Franchise</a>
+            <a href="Achievements.html">Remarkable Achievements</a>
+            <!-- Added Villain page redirect -->
+            <a href="villain.html">Marvel Villains</a>
+            <a href="wallpaper.html">Ironman Wallpaper Gallery</a>
+        </div>
+        <div class="footer-col-main">
+            <h4 class="h46">About Us</h4>
+            <a href="blog.html">Blogs</a>
+            <a href="/contributor.html">Contributors</a>
+            <a href="#">Careers</a>
+        </div>
+        <div class="footer-col-main">
+            <h4 class="h46">Contact Us</h4>
+            <a href="FAQs.html">Help/Faq's</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="PrivacyPolicy.html">Privacy Policy</a>
+            <a href="Terms&Conditions.html">Terms & Conditions</a>
+            <a href="#">Advertising</a>
+        </div>
+    </div>
+
+
+    <div class="footer-bar background"> 
+        <p>
+            &copy; Copyright 2024- All Rights Reserved -Made With ❤️ by <a class="mygithub" href="https://github.com/aslams2020"><span>Aslam</span> Sayyad</a>
+        </p>
+
+    </div>
+   </footer>
+   <button id="BacktoTop">
+    <div class="circle1">
+      <svg
+        id="back-to-top"
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        fill="currentColor"
+        class="bi bi-arrow-up-circle-fill"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"
+        ></path>
+      </svg>
+    </div>
+  </button>
+
+  <script>
+    /* Back to Top Button */
+    const scrollToTopBtn = document.getElementById("BacktoTop");
+    window.onscroll = function () {
+      scrollFunction();
+    };
+
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 50 ||
+        document.documentElement.scrollTop > 50
+      ) {
+        scrollToTopBtn.style.visibility = "visible";
+        scrollToTopBtn.style.opacity = "1";
+      } else {
+        scrollToTopBtn.style.visibility = "hidden";
+        scrollToTopBtn.style.opacity = "0";
+      }
+    }
+
+    scrollToTopBtn.addEventListener("click", function () {
+      // Smooth scroll back to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+    
+    <script>
+            window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+
+        });
+
+ </script>
+  <!-- form name  -->
+<script>
+    function validateText(input) {
+       
+        const errorMessage = document.getElementById('error-message');
+
+      
+        const invalidChars = /[^a-zA-Z\s]/g;
+        if (invalidChars.test(input.value)) {
+           
+            errorMessage.style.display = 'inline';
+        } else {
+            
+            errorMessage.style.display = 'none';
+        }
+
+        
+        input.value = input.value.replace(invalidChars, '');
+    }
+    </script>
+
+    <script src="Js/script.js"></script>
+    <script src="Js/secrets.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>  
+    <!-- adding automatic focus of cursor     -->
+    <script>
+        window.onload = function() {
+            document.getElementById('search-bar').focus();
+        };
+    </script>
+
+<!-- making the about section clealy visible when "about" or "home" is clicked -->
+<script>
+    function scrollToSection(event, sectionId) {
+  event.preventDefault();
+  const section = document.getElementById(sectionId);
+  const navbarHeight = 85; // Fixed navbar height
+
+  window.scrollTo({
+    top: section.offsetTop - navbarHeight,
+    behavior: 'smooth'
+  });
+}
+</script>
+<script>
+    // Coordinates for the cursor
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+
+    // Colors for the circles
+    const colors = [
+        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+        "#680060", "#60005f", "#48005f", "#3d005e"
+    ];
+
+    // Assign colors and initial position to each circle
+    circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+    });
+
+    // Update the coordinates when the mouse moves
+    window.addEventListener("mousemove", function (e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+    });
+
+    // Animation function to move the circles
+    function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+            // Update the position and scale of each circle
+            circle.style.left = x - 12 + "px";
+            circle.style.top = y - 12 + "px";
+            circle.style.scale = (circles.length - index) / circles.length;
+
+            circle.x = x;
+            circle.y = y;
+
+            // Get the next circle in the sequence
+            const nextCircle = circles[index + 1] || circles[0];
+            x += (nextCircle.x - x) * 0.3;
+            y += (nextCircle.y - y) * 0.3;
+        });
+
+        // Repeat the animation
+        requestAnimationFrame(animateCircles);
+    }
+
+    // Start the animation
+    animateCircles();
+</script>
+
+</body>
+
+</html>

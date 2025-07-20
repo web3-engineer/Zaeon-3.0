@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stark Tech Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="movieStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="website icon" href="/assets/logo/icon.png">
+    <link rel="icon" href="https://images.wallpapersden.com/image/download/marvel-iron-man-art_68122_2160x3840.jpg" type="image/png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Circle styles */
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 24px;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            /* Stays on top of all elements */
+        }
+        .progress-bar{
+          position: fixed;
+          width:100%;
+          height: 0.4vh;
+          z-index: 1200;  
+        }
+.filled{
+     width :0%;
+     height: 100%;
+     background-image: linear-gradient(to right,red,orange);
+     z-index: 100;
+}
+.poll-overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(24, 24, 24, 0.9); 
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.poll-content {
+    background: #2f2f2f; 
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ffcc00; 
+    max-width: 400px;
+    width: 80%;
+    text-align: center;
+    color: #ffcc00;
+}
+
+.poll-content h2 {
+    margin-top: 0;
+    color: #ff4b2b; 
+}
+
+.poll-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.poll-content ul li {
+    margin: 10px 0;
+    color: #e1e1e1; 
+    font-size: 20px;
+}
+
+.poll-content button {
+    margin: 10px;
+    padding: 8px 16px;
+    background-color: #ff4b2b; 
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.poll-content button:hover {
+    background-color: #ffcc00;
+}
+
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="filled"></div>
+     </div>
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+<nav class="navbar h-nav background">
+    <ul class="nav-list visibility">
+        <div class="logo" id="ironmask"><a href="/index.html"><img src="assets\logo\icon.png" alt="logo" srcset=""></a></div>
+        <li> <a href="index.html">Home</a></li>
+        <li> <a href="index.html#about" onclick="scrollToSection(event, 'home')">About</a></li>
+        <li> <a href="Appearances.html">Appearances</a></li>
+        <li> <a href="Comics.html">Comics</a></li>
+        <li> <a href="index.html#contact">Contact</a></li>
+         <!-- <li> <a href="#subscribe">Newsletter</a></li> -->
+        <li> <a href="/blog.html">Blogs</a></li>
+    </ul>
+
+    <div class="rightNav visibility">
+        <form class="search-bar">
+        <input type="text" name="search"  placeholder="Search the website">
+        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </div>
+    <div class="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</nav>
+
+<!-- Main Section -->
+<section class="movies-section background1" id="home">
+    <div class="box-main">
+        <div class="firstHalf DoAnimation">
+            <h1 class="movies-heading">
+                Movies <img src="assets/posters/ironmanmovie1.jpg" alt="Iron Man" class="ironman-image">Starred In
+            </h1>
+            <br> </br>
+            <h2>
+                TIMELINE OF MARVEL CINEMATIC UNIVERSE
+            </h2>
+            <br>
+            <br>
+        </div>
+    </div>
+
+<!-- Movie Cards Section -->
+<div class="movie-cards-container">
+    <!-- Card 1 -->
+    <div class="movie-card" data-aos="slide-right">
+        <a href="https://marvelcinematicuniverse.fandom.com/wiki/Iron_Man_(film)" target="_blank" class="movie-link">
+            <img src="assets/posters/ironmanmovie2.png" alt="Iron Man" class="movie-image">
+            <h2 class="movie-title">IRON MAN (2008) <span class="imdb-rating"><br>IMDB:7.9</span></h2>
+        </a>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="movie-card"  data-aos="zoom-in" >
+        <a href="https://marvelcinematicuniverse.fandom.com/wiki/Iron_Man_2" target="_blank" class="movie-link">
+            <img src="assets/posters/ironmanmovie3.png" alt="Iron Man" class="movie-image">
+            <h2 class="movie-title">IRON MAN 2 (2010) <span class="imdb-rating"><br>IMDB:6.9</span></h2>
+        </a>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="movie-card" data-aos="slide-left">
+        <a href="https://marvelcinematicuniverse.fandom.com/wiki/The_Avengers" target="_blank" class="movie-link">
+            <img src="assets/posters/ironmanmovie4.png" alt="Iron Man" class="movie-image">
+            <h2 class="movie-title">THE AVENGERS (2012) <span class="imdb-rating"><br>IMDB:8.0</span></h2>
+        </a>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="movie-card" data-aos="slide-right">
+        <a href="https://marvelcinematicuniverse.fandom.com/wiki/Iron_Man_3" target="_blank" class="movie-link">
+            <img src="assets/posters/ironmanmovie5.png" alt="Iron Man 3" class="movie-image">
+            <h2 class="movie-title">IRON MAN 3 (2013) <span class="imdb-rating"><br>IMDB:7.1</span></h2>
+        </a>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="movie-card" data-aos="zoom-in">
+        <a href="https://marvelcinematicuniverse.fandom.com/wiki/Avengers:_Age_of_Ultron" target="_blank" class="movie-link">
+            <img src="assets/posters/ironmanmovie6.png" alt="Avengers Age of Ultron" class="movie-image">
+            <h2 class="movie-title">AVENGERS: AGE OF ULTRON (2015) <span class="imdb-rating"><br>IMDB:7.3</span></h2>
+        </a>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="movie-card" data-aos="slide-left">
+        <a href="https://marvelcinematicuniverse.fandom.com/wiki/Captain_America:_Civil_War" target="_blank" class="movie-link">
+            <img src="assets/posters/ironmanmovie7.png" alt="Captain America Civil War" class="movie-image">
+            <h2 class="movie-title">CAPTAIN AMERICA: CIVIL WAR(2016) <span class="imdb-rating"><br>IMDB:7.8</span></h2>
+        </a>
+    </div>
+    <!-- Card 7 -->
+    <div class="movie-card" data-aos="slide-right">
+        <a href="https://marvelcinematicuniverse.fandom.com/wiki/Spider-Man:_Homecoming" target="_blank" class="movie-link">
+            <img src="assets/posters/ironmanmovie8.png" alt="Spider Man Homecoming" class="movie-image">
+            <h2 class="movie-title">SPIDER-MAN: HOMECOMING (2017) <span class="imdb-rating"><br>IMDB:7.4</span></h2>
+        </a>
+    </div>
+    <!-- Card 8 -->
+    <div class="movie-card" data-aos="zoom-in">
+        <a href="https://marvelcinematicuniverse.fandom.com/wiki/Avengers:_Infinity_War" target="_blank" class="movie-link">
+            <img src="assets/posters/ironmanmovie9.png" alt="Avengers Infinity War" class="movie-image">
+            <h2 class="movie-title">AVENGERS: INFINITY WAR(2018) <span class="imdb-rating"><br>IMDB:8.4</span></h2>
+        </a>
+    </div>
+    <!-- Card 9 -->
+    <div class="movie-card" data-aos="slide-left">
+        <a href="https://marvelcinematicuniverse.fandom.com/wiki/Avengers:_Endgame" target="_blank" class="movie-link">
+            <img src="assets/posters/ironmanmovie10.png" alt="Avengers Endgame" class="movie-image">
+            <h2 class="movie-title">AVENGERS: ENDGAME(2019) <span class="imdb-rating"><br>IMDB:8.4</span></h2>
+        </a>
+    </div>
+    <!-- Card 10 -->
+    <div class="movie-card" data-aos="zoom-in">
+        <a href="https://marvelcinematicuniverse.fandom.com/wiki/Spider-Man:_Far_From_Home" target="_blank" class="movie-link">
+            <img src="assets/posters/ironmanmovie11.png" alt="Spider Man Far From Home" class="movie-image">
+            <h2 class="movie-title">SPIDER-MAN: FAR FROM HOME(2019)<br>ARCHIVE FOOTAGE<span class="imdb-rating"><br>IMDB:7.4</span></h2>
+        </a>
+    </div>
+</div>
+
+<footer>
+    <div class="footer background">
+        <div class="footer-col">
+            <img src="/assets/logo/icon.png" id="ironlogo"    alt="">
+            <p class="footer-p">
+                
+                <!-- Iron Man is a fictional superhero in the Marvel Comics universe, created by writer Stan Lee. His real name is Tony Stark, a billionaire industrialist and genius inventor who builds a high-tech suit of powered armor to fight crime after a life-threatening injury. -->
+                <!-- Iron Man, or Tony Stark, is a billionaire genius who becomes a superhero with his advanced armored suit. -->
+                <!-- Iron Man, Tony Stark, is a tech genius who fights for justice in a powerful, high-tech suit of armor he created. -->
+                Iron Man, aka Tony Stark, is a tech genius and billionaire who uses his advanced armored suit to fight for justice.
+                
+            </p>
+            
+            <div class="footer-social">
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div> 
+        </div>
+        <div class="footer-col-main">
+            <h4 class="h46">Overview</h4>
+            <a href="index.html">Who is Iron Man?</a>
+            <a href="#">Franchise</a>
+            <a href="#">Community</a>
+            <a href="#">Media Kit</a>
+        </div>
+        <div class="footer-col-main">
+            <h4 class="h46">About Us</h4>
+            <a href="blog.html">Blogs</a>
+            <a href="/contributor.html">Contributors</a>
+            <a href="#">Careers</a>
+        </div>
+        <div class="footer-col-main">
+            <h4 class="h46">Contact Us</h4>
+            <a href="FAQs.html">Help/Faq's</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="PrivacyPolicy.html">Privacy Policy</a>
+            <a href="Terms&Conditions.html">Terms & Conditions</a>
+            <a href="#">Advertising</a>
+        </div>
+    </div>
+    <div class="footer-bar background"> 
+        <p>
+            &copy; Copyright 2024- All Rights Reserved -Made With ❤️ by <a class="mygithub" href="https://github.com/aslams2020"><span>Aslam</span> Sayyad</a>
+        </p>
+        
+    </div>
+    <!-- Popup Poll -->
+<div id="pollPopup" class="poll-overlay">
+    <div class="poll-content">
+        <h2>Vote for Your Favorite Movie</h2>
+        <ul>
+            <li><label><input type="radio" name="movie" value="Iron Man"> Iron Man (2008)</label></li>
+            <li><label><input type="radio" name="movie" value="Iron Man 2"> Iron Man 2 (2010)</label></li>
+            <li><label><input type="radio" name="movie" value="The Avengers"> The Avengers (2012)</label></li>
+            <li><label><input type="radio" name="movie" value="Iron Man 3"> Iron Man 3 (2013)</label></li>
+            <li><label><input type="radio" name="movie" value="Avengers: Age of Ultron"> Avengers: Age of Ultron (2015)</label></li>
+            <li><label><input type="radio" name="movie" value="Captain America: Civil War">Captain America: Civil War (2016)</label></li>
+            <li><label><input type="radio" name="movie" value="Spider-Man: Homecoming">Spider-Man: Homecoming(2017)</label></li>
+            <li><label><input type="radio" name="movie" value="Avengers: Infinity War"> Avengers: Infinity War (2018)</label></li>
+            <li><label><input type="radio" name="movie" value="Avengers: Endgame"> Avengers: Endgame (2019)</label></li>
+            <li><label><input type="radio" name="movie" value="Spider-Man: Far from Home "> Spider-Man: Far from Home (2019)</label></li>
+        </ul>
+        <button onclick="submitVote()">Submit Vote</button>
+        <button onclick="closePoll()">Close</button>
+        <!-- Top Voted Movie Display -->
+<div id="topVotedMovie">No votes yet. Be the first to vote!</div>
+    </div>
+</div>
+
+
+
+</footer>
+</div>
+<button id="BacktoTop">
+    <div class="circle1">
+      <svg
+        id="back-to-top"
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        fill="currentColor"
+        class="bi bi-arrow-up-circle-fill"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"
+        ></path>
+      </svg>
+    </div>
+  </button>
+
+  <script>
+    /* Back to Top Button */
+    const scrollToTopBtn = document.getElementById("BacktoTop");
+    window.onscroll = function () {
+      scrollFunction();
+    };
+
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 50 ||
+        document.documentElement.scrollTop > 50
+      ) {
+        scrollToTopBtn.style.visibility = "visible";
+        scrollToTopBtn.style.opacity = "1";
+      } else {
+        scrollToTopBtn.style.visibility = "hidden";
+        scrollToTopBtn.style.opacity = "0";
+      }
+    }
+
+    scrollToTopBtn.addEventListener("click", function () {
+      // Smooth scroll back to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+</footer>
+<script>
+    // Coordinates for the cursor
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+
+    // Colors for the circles
+    const colors = [
+        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+        "#680060", "#60005f", "#48005f", "#3d005e"
+    ];
+
+    // Assign colors and initial position to each circle
+    circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+    });
+
+    // Update the coordinates when the mouse moves
+    window.addEventListener("mousemove", function (e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+    });
+
+    // Animation function to move the circles
+    function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+            // Update the position and scale of each circle
+            circle.style.left = x - 12 + "px";
+            circle.style.top = y - 12 + "px";
+            circle.style.scale = (circles.length - index) / circles.length;
+
+            circle.x = x;
+            circle.y = y;
+
+            // Get the next circle in the sequence
+            const nextCircle = circles[index + 1] || circles[0];
+            x += (nextCircle.x - x) * 0.3;
+            y += (nextCircle.y - y) * 0.3;
+        });
+
+        // Repeat the animation
+        requestAnimationFrame(animateCircles);
+    }
+
+    // Start the animation
+    animateCircles();
+</script>
+<script src="Js/script.js"></script>
+<script src="Js/secrets.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 2000
+  });
+
+    //js 
+
+const filled = document.querySelector('.filled');
+
+function update () {
+    filled.style.width = `${((window.scrollY) / (document.body.scrollHeight - window.innerHeight) * 100)}%`;
+requestAnimationFrame(update);
+}
+update();
+</script>
+
+<script>
+window.onload = function() {
+    // Check if the user has voted before
+    if (!localStorage.getItem("hasVoted")) {
+        document.getElementById("pollPopup").style.display = "flex";
+    }
+    displayTopVotedMovie();
+};
+
+function closePoll() {
+    document.getElementById("pollPopup").style.display = "none";
+}
+
+function submitVote() {
+    const selectedMovie = document.querySelector('input[name="movie"]:checked');
+    if (selectedMovie) {
+        let votes = JSON.parse(localStorage.getItem("movieVotes")) || {};
+        votes[selectedMovie.value] = (votes[selectedMovie.value] || 0) + 1;
+        localStorage.setItem("movieVotes", JSON.stringify(votes));
+
+        // Mark that the user has voted, so the poll won't appear again
+        localStorage.setItem("hasVoted", "true");
+
+        alert("Thank you for voting for: " + selectedMovie.value);
+        closePoll();
+        displayTopVotedMovie();
+    } else {
+        alert("Please select a movie to vote.");
+    }
+}
+
+// Function to display the top-voted movie
+function displayTopVotedMovie() {
+    const votes = JSON.parse(localStorage.getItem("movieVotes")) || {};
+    let topMovie = null;
+    let maxVotes = 0;
+
+    for (const movie in votes) {
+        if (votes[movie] > maxVotes) {
+            maxVotes = votes[movie];
+            topMovie = movie;
+        }
+    }
+
+    const topVotedDisplay = document.getElementById("topVotedMovie");
+    if (topVotedDisplay && topMovie) {
+        topVotedDisplay.textContent = `Top Voted Movie: ${topMovie} with ${maxVotes} vote(s)`;
+    } else if (topVotedDisplay) {
+        topVotedDisplay.textContent = "No votes yet. Be the first to vote!";
+    }
+}
+
+
+
+</script>
+</body>
+</html>
